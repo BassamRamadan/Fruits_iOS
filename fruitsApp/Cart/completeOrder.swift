@@ -29,12 +29,11 @@ class completeOrder: common , CLLocationManagerDelegate{
     var long:Double?
     var lat:Double?
     
-    
-    
     var cartID: Int?
     var promoCode: String?
     var availableId: Int?
     var availableTimes = [availableTimeData]()
+    var cost: String?
     
     @IBOutlet var deliveryDate: UITextField!
     @IBOutlet var notes: UITextView!
@@ -45,7 +44,7 @@ class completeOrder: common , CLLocationManagerDelegate{
     // MARK: - View Did Load
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        navigationItem.title = "استكمال الشراء"
         
         mapView.delegate = self
         locationManager.delegate = self
@@ -58,6 +57,8 @@ class completeOrder: common , CLLocationManagerDelegate{
         time.delegate = self
         showDatePicker()
         getAvailableTimes()
+        setupBackButtonWithPOP()
+        totalCost.text = cost ?? "0"
     }
     @IBAction func dropDown(_ sender: UIButton) {
         dropDown.anchorView = (sender as AnchorView)
@@ -94,6 +95,11 @@ class completeOrder: common , CLLocationManagerDelegate{
                 let decoder = JSONDecoder()
                 if error == nil {
                     if success {
+                        
+                            let storyboard = UIStoryboard(name: "completeOrder", bundle: nil)
+                            let linkingVC = storyboard.instantiateViewController(withIdentifier: "completeOrder")
+                            let appDelegate = UIApplication.shared.delegate
+                            appDelegate?.window??.rootViewController = linkingVC
                         
                         self.stopAnimating()
                     }else{
@@ -152,9 +158,7 @@ class completeOrder: common , CLLocationManagerDelegate{
 extension completeOrder{
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        
         let userLocation = locations.last
-        
         showMarker(position: userLocation!.coordinate)
         self.locationManager.stopUpdatingLocation()
     }
@@ -212,7 +216,7 @@ extension completeOrder: GMSMapViewDelegate{
     }
     
     func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D){
-        print("didDrag")
+        print("didTap")
         // mapView.clear()
         self.showMarker(position: coordinate)
     }
@@ -224,7 +228,8 @@ extension completeOrder: GMSMapViewDelegate{
         
         self.long = position.longitude
         self.lat = position.latitude
-        geocoder.reverseGeocodeCoordinate(position) { (response, error) in
+        geocoder.reverseGeocodeCoordinate(position) {
+            (response, error) in
             guard let address = response?.firstResult(), let lines = address.lines else {
                 return
             }
@@ -244,14 +249,19 @@ extension completeOrder: GMSMapViewDelegate{
     }
     
     func setupLocationManager() {
+        mapView.isMyLocationEnabled = true
+        mapView.settings.myLocationButton = true
+        mapView.padding = UIEdgeInsets(top: 0, left: 0, bottom: 20, right: 20)
+        //Location Manager code to fetch current location
         locationManager.delegate = self
         locationManager.desiredAccuracy = 1.0
+        locationManager.startUpdatingLocation()
     }
     func checkLocationServices() {
         if CLLocationManager.locationServicesEnabled() {
             setupLocationManager()
             checkLocationAuthorization()
-        } else {
+        }else {
             // Show alert letting the user know they have to turn this on.
             locationManager.requestWhenInUseAuthorization()
         }

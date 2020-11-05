@@ -287,7 +287,6 @@
                                                                         <rect key="frame" x="0.0" y="0.0" width="78.5" height="301.5"/>
                                                                         <connections>
                                                                             <action selector="openSign" destination="EpG-Ka-eaj" eventType="touchUpInside" id="LxR-Z3-is8"/>
-                                                                            <action selector="openTheMain" destination="EpG-Ka-eaj" eventType="touchUpInside" id="oS5-GJ-KHU"/>
                                                                         </connections>
                                                                     </button>
                                                                 </subviews>
@@ -339,7 +338,6 @@
                                                                         <rect key="frame" x="0.0" y="0.0" width="78.5" height="301.5"/>
                                                                         <connections>
                                                                             <action selector="openLogin" destination="EpG-Ka-eaj" eventType="touchUpInside" id="DOW-j2-b5Y"/>
-                                                                            <action selector="openTheMain" destination="EpG-Ka-eaj" eventType="touchUpInside" id="DPj-9U-UEQ"/>
                                                                         </connections>
                                                                     </button>
                                                                 </subviews>

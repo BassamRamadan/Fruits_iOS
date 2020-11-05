@@ -89,6 +89,10 @@ class myOrders: common {
 }
 extension myOrders: UICollectionViewDelegate,UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        collectionView.backgroundView = nil
+        if myOrdersData.count == 0{
+            noDataAvailable(collectionView)
+        }
         return myOrdersData.count
     }
     

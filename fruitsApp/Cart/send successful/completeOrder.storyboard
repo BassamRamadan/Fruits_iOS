@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2n7-JL-o5L">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="DroidNaskh-Bold.ttf">
+            <string>DroidArabicNaskh-Bold</string>
+        </array>
+        <array key="DroidNaskh-Regular.ttf">
+            <string>DroidArabicNaskh</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--تم الارسال-->
+        <scene sceneID="3Ab-JM-PL5">
+            <objects>
+                <viewController storyboardIdentifier="completeOrder" title="تم الارسال" useStoryboardIdentifierAsRestorationIdentifier="YES" id="2n7-JL-o5L" customClass="sendSuccessfully" customModule="fruitsApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3fI-E4-3ni">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7sq-kG-goA">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0P2-bq-BK5">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="562.5"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="wnw-8m-riQ">
+                                                <rect key="frame" x="20" y="100" width="374" height="442.5"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_complate" translatesAutoresizingMaskIntoConstraints="NO" id="lVJ-pj-1Hh">
+                                                        <rect key="frame" x="67" y="0.0" width="240" height="200"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="200" id="Fte-Jm-Yfg"/>
+                                                            <constraint firstAttribute="width" constant="240" id="S4Z-oq-aDE"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="nQw-NW-LQI">
+                                                        <rect key="frame" x="69.5" y="260" width="235.5" height="67.5"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="تم ارسال طلبك بنجاح" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uqf-N2-7aM">
+                                                                <rect key="frame" x="0.0" y="0.0" width="235.5" height="36.5"/>
+                                                                <fontDescription key="fontDescription" name="DroidArabicNaskh-Bold" family="Droid Arabic Naskh" pointSize="19"/>
+                                                                <color key="textColor" name="completeSend"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="نسعد دايما بخدمتكم وتلبيه طلباتكم" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EPV-zB-ghs">
+                                                                <rect key="frame" x="0.0" y="36.5" width="235.5" height="31"/>
+                                                                <fontDescription key="fontDescription" name="DroidArabicNaskh" family="Droid Arabic Naskh" pointSize="16"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pDz-qc-Uik" customClass="ButtonShadow" customModule="fruitsApp" customModuleProvider="target">
+                                                        <rect key="frame" x="62" y="387.5" width="250" height="55"/>
+                                                        <color key="backgroundColor" name="yellow"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="250" id="Gwh-hW-FX7"/>
+                                                            <constraint firstAttribute="height" constant="55" id="Vps-F8-XVK"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="DroidArabicNaskh-Bold" family="Droid Arabic Naskh" pointSize="17"/>
+                                                        <state key="normal" title="قائمة طلباتي">
+                                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="toOrders" destination="2n7-JL-o5L" eventType="touchUpInside" id="mFm-Y8-D7t"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="wnw-8m-riQ" firstAttribute="top" secondItem="0P2-bq-BK5" secondAttribute="top" constant="100" id="Fbw-rx-Nv0"/>
+                                            <constraint firstAttribute="height" secondItem="wnw-8m-riQ" secondAttribute="height" constant="120" id="O6l-zz-Jzh"/>
+                                            <constraint firstItem="wnw-8m-riQ" firstAttribute="leading" secondItem="0P2-bq-BK5" secondAttribute="leading" constant="20" id="en8-Oo-dqX"/>
+                                            <constraint firstAttribute="trailing" secondItem="wnw-8m-riQ" secondAttribute="trailing" constant="20" id="oJO-fK-Sb5"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="0P2-bq-BK5" firstAttribute="width" secondItem="7sq-kG-goA" secondAttribute="width" id="1v0-uO-AOd"/>
+                                    <constraint firstItem="0P2-bq-BK5" firstAttribute="top" secondItem="7sq-kG-goA" secondAttribute="top" id="I0Z-QL-Tv9"/>
+                                    <constraint firstItem="0P2-bq-BK5" firstAttribute="leading" secondItem="7sq-kG-goA" secondAttribute="leading" id="I41-c5-f6J"/>
+                                    <constraint firstAttribute="bottom" secondItem="0P2-bq-BK5" secondAttribute="bottom" id="KZ8-4w-YaB"/>
+                                    <constraint firstAttribute="trailing" secondItem="0P2-bq-BK5" secondAttribute="trailing" id="ka9-1S-C7U"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="jSr-87-bLx" firstAttribute="bottom" secondItem="7sq-kG-goA" secondAttribute="bottom" id="MdY-VI-i8m"/>
+                            <constraint firstItem="jSr-87-bLx" firstAttribute="trailing" secondItem="7sq-kG-goA" secondAttribute="trailing" id="USZ-Ha-mXP"/>
+                            <constraint firstItem="7sq-kG-goA" firstAttribute="leading" secondItem="jSr-87-bLx" secondAttribute="leading" id="Ywz-91-kaO"/>
+                            <constraint firstItem="7sq-kG-goA" firstAttribute="top" secondItem="jSr-87-bLx" secondAttribute="top" id="Zpt-DM-ZTt"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="jSr-87-bLx"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1uW-ml-Uyc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3914" y="127"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ic_complate" width="246" height="246"/>
+        <namedColor name="completeSend">
+            <color red="0.12549019607843137" green="0.83529411764705885" blue="0.69411764705882351" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="yellow">
+            <color red="0.99607843137254903" green="0.85490196078431369" blue="0.062745098039215685" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

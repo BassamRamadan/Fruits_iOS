@@ -56,6 +56,20 @@ class TextFieldShadow: UITextField {
         return bounds.inset(by: padding)
     }
 }
+class TextViewShadowWithBorder: UITextView {
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        textContainerInset = UIEdgeInsets(top: 8, left: 10, bottom: 8, right: 10)
+        self.layer.borderWidth = 1.5
+        self.layer.borderColor = UIColor(named: "yellow")?.cgColor
+        layer.shadowOffset = CGSize(width: 1, height: 1)
+        layer.shadowRadius = 3
+        layer.shadowOpacity = 0.70
+        layer.shadowColor = UIColor.lightGray.cgColor
+        layer.shadowOpacity = 0.8
+        layer.masksToBounds = false
+    }
+}
 class TextViewShadow: UITextView {
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -67,7 +81,6 @@ class TextViewShadow: UITextView {
         layer.shadowOpacity = 0.8
         layer.masksToBounds = false
     }
-    
 }
 class ButtonShadow: UIButton {
     override func awakeFromNib() {

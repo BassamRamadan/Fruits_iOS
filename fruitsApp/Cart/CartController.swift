@@ -90,6 +90,15 @@ class cartController: common {
     func getStartfrom(_ index: Int)-> Double{
         return Double(data?.items?[index].product?.weightUnits?.first(where: {$0.weightUnit == data?.items?[index].weightUnit})?.startFrom ?? "0") ?? 0.0
     }
+    func openPayment(){
+        let storyboard = UIStoryboard(name: "Cart", bundle: nil)
+        let linkingVC = storyboard.instantiateViewController(withIdentifier: "payment") as! UINavigationController
+        let des = linkingVC.viewControllers[0] as! completeOrder
+        des.cartID = data?.cartID ?? 0
+        des.promoCode = self.promoText
+        des.cost = totalCostLabel.text
+        self.navigationController?.pushViewController(des, animated: true)
+    }
 }
 extension cartController: UICollectionViewDelegate, UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -164,7 +173,11 @@ extension cartController{
         }
     }
     @IBAction func saveCartItemsAfterEditing(){
+        if data?.items?.count == 0{
+            return
+        }
         if Editing == false{
+            self.openPayment()
             return
         }
         self.loading()
@@ -192,6 +205,7 @@ extension cartController{
                             self.isBack = false
                             self.navigationController?.dismiss(animated: true)
                         }
+                        self.openPayment()
                         self.stopAnimating()
                     }else{
                         let dataRecived = try decoder.decode(ErrorHandle.self, from: jsonData)
