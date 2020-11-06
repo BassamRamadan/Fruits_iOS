@@ -96,8 +96,8 @@ class completeOrder: common , CLLocationManagerDelegate{
                 if error == nil {
                     if success {
                         
-                            let storyboard = UIStoryboard(name: "completeOrder", bundle: nil)
-                            let linkingVC = storyboard.instantiateViewController(withIdentifier: "completeOrder")
+                            let storyboard = UIStoryboard(name: "sendSuccessfully", bundle: nil)
+                            let linkingVC = storyboard.instantiateViewController(withIdentifier: "sendSuccessfully")
                             let appDelegate = UIApplication.shared.delegate
                             appDelegate?.window??.rootViewController = linkingVC
                         

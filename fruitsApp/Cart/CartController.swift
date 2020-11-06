@@ -129,8 +129,6 @@ extension cartController: UICollectionViewDelegate, UICollectionViewDataSource{
         }
         return cell
     }
-    
-    
 }
 extension cartController{
     func deleteCartItem(index:Int){

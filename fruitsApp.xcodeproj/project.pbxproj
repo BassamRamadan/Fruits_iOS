@@ -16,8 +16,7 @@
 		58721113251C8A8C00069897 /* orders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58721112251C8A8C00069897 /* orders.swift */; };
 		58740EF32510A7950046A2C3 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58740EF22510A7950046A2C3 /* Setting.storyboard */; };
 		58740EF52510A7AB0046A2C3 /* settingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58740EF42510A7AB0046A2C3 /* settingController.swift */; };
-		587C8ECD2554ABEB0051A8F7 /* completeOrder.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 587C8ECC2554ABEB0051A8F7 /* completeOrder.storyboard */; };
-		587C8ED02554AC420051A8F7 /* sendSuccessful.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587C8ECF2554AC420051A8F7 /* sendSuccessful.swift */; };
+		587C8ED02554AC420051A8F7 /* sendSuccessfully.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587C8ECF2554AC420051A8F7 /* sendSuccessfully.swift */; };
 		587EDBBF250CA9BB00B5BA35 /* Registeration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 587EDBBE250CA9BB00B5BA35 /* Registeration.storyboard */; };
 		587EDBC4250CB03D00B5BA35 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587EDBC0250CB03C00B5BA35 /* Login.swift */; };
 		587EDBC5250CB03D00B5BA35 /* Sign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587EDBC1250CB03D00B5BA35 /* Sign.swift */; };
@@ -48,6 +47,7 @@
 		58B36700250BF4BD00B975C0 /* DroidNaskh-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 58B366EA250BF4BC00B975C0 /* DroidNaskh-Regular.ttf */; };
 		58B36701250BF4BD00B975C0 /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B366EC250BF4BD00B975C0 /* UIView+Layout.swift */; };
 		58B36702250BF4BD00B975C0 /* VerticalStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B366ED250BF4BD00B975C0 /* VerticalStackView.swift */; };
+		58C4880025553237009F8757 /* sendSuccessfully.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58C487FF25553237009F8757 /* sendSuccessfully.storyboard */; };
 		58CE8A77250E04C300B05751 /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CE8A76250E04C300B05751 /* Cart.swift */; };
 		58CE8A7A250E059800B05751 /* CartController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CE8A79250E059800B05751 /* CartController.swift */; };
 		58CE8A7C250E07B400B05751 /* Cart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58CE8A7B250E07B400B05751 /* Cart.storyboard */; };
@@ -70,8 +70,7 @@
 		58721112251C8A8C00069897 /* orders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = orders.swift; sourceTree = "<group>"; };
 		58740EF22510A7950046A2C3 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 		58740EF42510A7AB0046A2C3 /* settingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = settingController.swift; sourceTree = "<group>"; };
-		587C8ECC2554ABEB0051A8F7 /* completeOrder.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = completeOrder.storyboard; path = "../New Group/completeOrder.storyboard"; sourceTree = "<group>"; };
-		587C8ECF2554AC420051A8F7 /* sendSuccessful.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sendSuccessful.swift; sourceTree = "<group>"; };
+		587C8ECF2554AC420051A8F7 /* sendSuccessfully.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sendSuccessfully.swift; sourceTree = "<group>"; };
 		587EDBBE250CA9BB00B5BA35 /* Registeration.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Registeration.storyboard; sourceTree = "<group>"; };
 		587EDBC0250CB03C00B5BA35 /* Login.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		587EDBC1250CB03D00B5BA35 /* Sign.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sign.swift; sourceTree = "<group>"; };
@@ -102,6 +101,7 @@
 		58B366EA250BF4BC00B975C0 /* DroidNaskh-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DroidNaskh-Regular.ttf"; sourceTree = "<group>"; };
 		58B366EC250BF4BD00B975C0 /* UIView+Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
 		58B366ED250BF4BD00B975C0 /* VerticalStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerticalStackView.swift; sourceTree = "<group>"; };
+		58C487FF25553237009F8757 /* sendSuccessfully.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = sendSuccessfully.storyboard; sourceTree = "<group>"; };
 		58CE8A76250E04C300B05751 /* Cart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
 		58CE8A79250E059800B05751 /* CartController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartController.swift; sourceTree = "<group>"; };
 		58CE8A7B250E07B400B05751 /* Cart.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Cart.storyboard; sourceTree = "<group>"; };
@@ -173,15 +173,6 @@
 				58740EF42510A7AB0046A2C3 /* settingController.swift */,
 			);
 			path = Setting;
-			sourceTree = "<group>";
-		};
-		587C8ECE2554ABFA0051A8F7 /* send successful */ = {
-			isa = PBXGroup;
-			children = (
-				587C8ECC2554ABEB0051A8F7 /* completeOrder.storyboard */,
-				587C8ECF2554AC420051A8F7 /* sendSuccessful.swift */,
-			);
-			path = "send successful";
 			sourceTree = "<group>";
 		};
 		587EDBBD250CA97900B5BA35 /* Login + Registering Pages */ = {
@@ -299,7 +290,8 @@
 		58CE8A78250E058100B05751 /* Cart */ = {
 			isa = PBXGroup;
 			children = (
-				587C8ECE2554ABFA0051A8F7 /* send successful */,
+				58C487FF25553237009F8757 /* sendSuccessfully.storyboard */,
+				587C8ECF2554AC420051A8F7 /* sendSuccessfully.swift */,
 				58CE8A7B250E07B400B05751 /* Cart.storyboard */,
 				58CE8A79250E059800B05751 /* CartController.swift */,
 				5842B1AD251A0D530010674D /* completeOrder.swift */,
@@ -345,8 +337,8 @@
 				5842652824F2C4D8003DDE22 /* Sources */,
 				5842652924F2C4D8003DDE22 /* Frameworks */,
 				5842652A24F2C4D8003DDE22 /* Resources */,
-				70126A2D6B6F15893652B059 /* [CP] Embed Pods Frameworks */,
-				56B4664D84D4D76B73DDD9CC /* [CP] Copy Pods Resources */,
+				3A3CEF87CC64DD705F723C5E /* [CP] Embed Pods Frameworks */,
+				02402A3F6247584D3FB6ED00 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -398,13 +390,13 @@
 				58B366FE250BF4BD00B975C0 /* Main.storyboard in Resources */,
 				5842653A24F2C4DA003DDE22 /* LaunchScreen.storyboard in Resources */,
 				58B36700250BF4BD00B975C0 /* DroidNaskh-Regular.ttf in Resources */,
-				587C8ECD2554ABEB0051A8F7 /* completeOrder.storyboard in Resources */,
 				5842653724F2C4DA003DDE22 /* Assets.xcassets in Resources */,
 				58853486252C3D3F00948727 /* GoogleService-Info.plist in Resources */,
 				587EDBBF250CA9BB00B5BA35 /* Registeration.storyboard in Resources */,
 				58DEF213251362DD00AAFF3D /* Contactus.xib in Resources */,
 				58B366FF250BF4BD00B975C0 /* DroidNaskh-Bold.ttf in Resources */,
 				58B366FB250BF4BD00B975C0 /* productDetails.xib in Resources */,
+				58C4880025553237009F8757 /* sendSuccessfully.storyboard in Resources */,
 				58CE8A7C250E07B400B05751 /* Cart.storyboard in Resources */,
 				58740EF32510A7950046A2C3 /* Setting.storyboard in Resources */,
 				58B366FD250BF4BD00B975C0 /* loginAlert.xib in Resources */,
@@ -414,7 +406,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		56B4664D84D4D76B73DDD9CC /* [CP] Copy Pods Resources */ = {
+		02402A3F6247584D3FB6ED00 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -431,7 +423,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-fruitsApp/Pods-fruitsApp-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		70126A2D6B6F15893652B059 /* [CP] Embed Pods Frameworks */ = {
+		3A3CEF87CC64DD705F723C5E /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -506,7 +498,7 @@
 				58B366FA250BF4BD00B975C0 /* productDetails.swift in Sources */,
 				587EDBC5250CB03D00B5BA35 /* Sign.swift in Sources */,
 				58B36701250BF4BD00B975C0 /* UIView+Layout.swift in Sources */,
-				587C8ED02554AC420051A8F7 /* sendSuccessful.swift in Sources */,
+				587C8ED02554AC420051A8F7 /* sendSuccessfully.swift in Sources */,
 				58B366F6250BF4BD00B975C0 /* common.swift in Sources */,
 				58740EF52510A7AB0046A2C3 /* settingController.swift in Sources */,
 				58ED4667251A36E900B364D9 /* availableTime.swift in Sources */,
