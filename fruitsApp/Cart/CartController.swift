@@ -53,6 +53,7 @@ class cartController: common {
             self.navigationController?.dismiss(animated: true)
         }
         self.isBack = true
+        home.returnFromCart = true
         self.saveCartItemsAfterEditing()
     }
     fileprivate func updateTotalCost(){
@@ -91,6 +92,9 @@ class cartController: common {
         return Double(data?.items?[index].product?.weightUnits?.first(where: {$0.weightUnit == data?.items?[index].weightUnit})?.startFrom ?? "0") ?? 0.0
     }
     func openPayment(){
+        if data?.items?.count ?? 0 == 0{
+            return
+        }
         let storyboard = UIStoryboard(name: "Cart", bundle: nil)
         let linkingVC = storyboard.instantiateViewController(withIdentifier: "payment") as! UINavigationController
         let des = linkingVC.viewControllers[0] as! completeOrder
@@ -200,6 +204,7 @@ extension cartController{
                 if error == nil {
                     if success {
                         if self.isBack{
+                            home.returnFromCart = true
                             self.isBack = false
                             self.navigationController?.dismiss(animated: true)
                         }

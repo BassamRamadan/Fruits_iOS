@@ -38,6 +38,7 @@ class Sign: common{
             isProfilEditing = true
         }else{
             navigationItem.title = "تسجيل عضوية"
+            isProfilEditing = false
         }
         setupAllDelegate()
         setupBackButtonWithDismiss()

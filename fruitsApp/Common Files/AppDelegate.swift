@@ -11,20 +11,23 @@ import IQKeyboardManagerSwift
 import GoogleMaps
 import GooglePlaces
 import Firebase
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    static var stringWithLink = ""
+    static var stringWithLink = "متجر الفاكهة والخضار : في خطوات سهلة وقصيرة كل احتياجاتك تصل الي مكانك كما لوكنت انت تشتري بنفسك http://itunes.apple.com/app/id1539317993 "
     static var LocalUrl = "https://services-apps.net/fruits/public/api/"
     static var badge = [CAShapeLayer(),CAShapeLayer(),CAShapeLayer(),CAShapeLayer(),CAShapeLayer()]
     static var firstBadge = [true,true,true,true,true]
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-    
+        if CashedData.getUserApiKey() == nil{
+            CashedData.saveUserApiKey(token: "")
+        }
         IQKeyboardManager.shared.enable = true
-        GMSServices.provideAPIKey("AIzaSyCH41pwRsQKTf9IXYWxzbMA1V6cHHsmmZM")
-    GMSPlacesClient.provideAPIKey("AIzaSyCH41pwRsQKTf9IXYWxzbMA1V6cHHsmmZM")
+        GMSServices.provideAPIKey("AIzaSyDBTDTrEtqkxBMwTRa1Z2eeaaqOXpS4CeQ")
+        GMSPlacesClient.provideAPIKey("AIzaSyDBTDTrEtqkxBMwTRa1Z2eeaaqOXpS4CeQ")
         FirebaseApp.configure()
         return true
     }

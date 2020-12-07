@@ -18,17 +18,7 @@ class common : UIViewController , NVActivityIndicatorViewable{
         return notifBtn
         // Do any additional setup after loading the view
     }
-    func openProductDetails(data: product){
-        let loginVC = productDetails(nibName: "productDetails", bundle: nil)
-        loginVC.data = data
-        // Create the dialog
-        let popup = PopupDialog(viewController: loginVC,
-                                buttonAlignment: .horizontal,
-                                transitionStyle: .bounceDown,
-                                tapGestureDismissal: false,
-                                panGestureDismissal: false)
-        present(popup, animated: true, completion: nil)
-    }
+    
     
     func openSetting(pagTitle:String){
         let storyboard = UIStoryboard(name: "Setting", bundle: nil)
@@ -56,7 +46,7 @@ class common : UIViewController , NVActivityIndicatorViewable{
     }
     func openMain(){
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let linkingVC = storyboard.instantiateViewController(withIdentifier: "Main") as! UINavigationController
+        let linkingVC = storyboard.instantiateViewController(withIdentifier: "Main") as! MainViewController
         let appDelegate = UIApplication.shared.delegate
         appDelegate?.window??.rootViewController = linkingVC
     }
@@ -150,7 +140,11 @@ class common : UIViewController , NVActivityIndicatorViewable{
         self.present(linkingVC,animated: true,completion: nil)
     }
     
-  
+    func callStoryboard(name: String) {
+        let storyboard = UIStoryboard(name: name, bundle: nil)
+        let linkingVC = storyboard.instantiateViewController(withIdentifier: name) as! UINavigationController
+        self.present(linkingVC,animated: true,completion: nil)
+    }
     
     
     

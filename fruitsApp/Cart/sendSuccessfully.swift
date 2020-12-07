@@ -14,8 +14,8 @@ class sendSuccessfully: UIViewController{
     }
     
     @IBAction func toOrders(){
-        let storyboard = UIStoryboard(name: "Setting", bundle: nil)
-        let linkingVC = storyboard.instantiateViewController(withIdentifier: "Setting")
+        let storyboard = UIStoryboard(name: "myOrders", bundle: nil)
+        let linkingVC = storyboard.instantiateViewController(withIdentifier: "myOrders")
         let appDelegate = UIApplication.shared.delegate
         appDelegate?.window??.rootViewController = linkingVC
     }

@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JOu-Ay-LZu">
-    <device id="retina6_1" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JOu-Ay-LZu">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -31,10 +29,10 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RzA-on-oHn">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="597.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="571.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="80" translatesAutoresizingMaskIntoConstraints="NO" id="Ebj-vb-UaV">
-                                                <rect key="frame" x="20" y="100" width="374" height="477.5"/>
+                                                <rect key="frame" x="20" y="100" width="374" height="451.5"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_complate" translatesAutoresizingMaskIntoConstraints="NO" id="KGf-wa-o55">
                                                         <rect key="frame" x="67" y="0.0" width="240" height="200"/>
@@ -44,16 +42,16 @@
                                                         </constraints>
                                                     </imageView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="izi-DN-Kut">
-                                                        <rect key="frame" x="70" y="280" width="234" height="67.5"/>
+                                                        <rect key="frame" x="91.5" y="280" width="191.5" height="41.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="تم ارسال طلبك بنجاح" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yy9-LI-XaK">
-                                                                <rect key="frame" x="0.0" y="0.0" width="234" height="36.5"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="191.5" height="22.5"/>
                                                                 <fontDescription key="fontDescription" name="DroidArabicNaskh-Bold" family="Droid Arabic Naskh" pointSize="19"/>
                                                                 <color key="textColor" name="green"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="نسعد دائما بخدمتكم وتلبيه طلباتكم" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fhw-k5-RSR">
-                                                                <rect key="frame" x="0.0" y="36.5" width="234" height="31"/>
+                                                                <rect key="frame" x="0.0" y="22.5" width="191.5" height="19"/>
                                                                 <fontDescription key="fontDescription" name="DroidArabicNaskh" family="Droid Arabic Naskh" pointSize="16"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -61,7 +59,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pcj-gl-3wO" customClass="ButtonShadow" customModule="fruitsApp" customModuleProvider="target">
-                                                        <rect key="frame" x="67" y="427.5" width="240" height="50"/>
+                                                        <rect key="frame" x="67" y="401.5" width="240" height="50"/>
                                                         <color key="backgroundColor" name="yellow"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="240" id="49a-vs-qav"/>

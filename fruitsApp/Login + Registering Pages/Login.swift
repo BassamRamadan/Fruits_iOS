@@ -59,7 +59,6 @@ class Login: common{
                         CashedData.saveUserPassword(name: self.password.text ?? "")
                         CashedData.saveUserPhone(name: user?.phone ?? "")
                         self.navigationController?.dismiss(animated: true)
-                        
                         self.openMain()
                         self.stopAnimating()
                         

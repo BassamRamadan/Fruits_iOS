@@ -44,6 +44,7 @@ class forgetPass: common{
                 let decoder = JSONDecoder()
                 if error == nil{
                     if success{
+                        CashedData.saveUserEmail(name: self.email.text ?? "")
                         self.openRegisteringPage(pagTitle: "resetPass")
                         self.stopAnimating()
                     }else{

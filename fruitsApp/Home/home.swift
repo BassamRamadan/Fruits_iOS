@@ -7,20 +7,29 @@
 //
 
 import UIKit
+import PopupDialog
 
 class home: ContentViewController {
     var categories = [categoryData]()
     var products : products?
+    public static var returnFromCart = false
     var categorySelected = 0
     @IBOutlet var categoryCollection: UICollectionView!
     @IBOutlet var productCollection: UICollectionView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         getCategories()
+        setCartCount()
     }
+    
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+        if home.returnFromCart {
+            setCartCount()
+            home.returnFromCart = false
+        }
+    }
+    public func setCartCount(){
         AppDelegate.badge[1].removeFromSuperlayer()
         AppDelegate.badge[1] = CAShapeLayer()
         AppDelegate.firstBadge[1] = true
@@ -67,6 +76,18 @@ class home: ContentViewController {
             }
         }
     }
+    func openProductDetails(data: product){
+        let loginVC = productDetails(nibName: "productDetails", bundle: nil)
+        loginVC.data = data
+        loginVC.viewParent = self
+        // Create the dialog
+        let popup = PopupDialog(viewController: loginVC,
+                                buttonAlignment: .horizontal,
+                                transitionStyle: .bounceDown,
+                                tapGestureDismissal: false,
+                                panGestureDismissal: false)
+        present(popup, animated: true, completion: nil)
+    }
 }
 
 // MARK:- Collections View
@@ -87,9 +108,9 @@ extension home: UICollectionViewDataSource,UICollectionViewDelegate , UICollecti
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         if collectionView == categoryCollection{
-            return .init(width: 100, height: 140)
+            return .init(width: 85, height: 100)
         }else{
-            return .init(width: (collectionView.frame.width - 20)/2, height: 200)
+            return .init(width: (collectionView.frame.width - 30)/2, height: 160)
         }
         
     }
@@ -153,6 +174,8 @@ extension home {
                         self.stopAnimating()
                         if self.categories.count > 0{
                             self.getProducts(categoryId: self.categories[0].id ?? 0, pageNumber: 1, removeIt: true)
+                            let item = IndexPath(item: 0, section: 0)
+                            self.categoryCollection.scrollToItem(at: item, at: .right, animated: true)
                         }
                     }else{
                         self.present(common.makeAlert(), animated: true, completion: nil)

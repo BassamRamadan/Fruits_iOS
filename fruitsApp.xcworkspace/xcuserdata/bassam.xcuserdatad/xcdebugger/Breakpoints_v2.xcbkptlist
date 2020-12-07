@@ -41,14 +41,46 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "fruitsApp/Cart/completeOrder.swift"
-            timestampString = "626309415.019941"
+            filePath = "fruitsApp/Login + Registering Pages/resetPass.swift"
+            timestampString = "629025391.786973"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "225"
-            endingLineNumber = "225"
-            landmarkName = "mapView(_:willMove:)"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "resetPass(sender:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "fruitsApp.resetPassword.resetPass(sender: Any) -&gt; ()"
+                  moduleName = "fruitsApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/Work/Finished%20Projects/fruitsApp/fruitsApp/Login%20+%20Registering%20Pages/resetPass.swift"
+                  timestampString = "629028085.855829"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "2799">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Error&gt;, Swift.Bool, Foundation.Data) -&gt; () in fruitsApp.resetPassword.resetPass(sender: Any) -&gt; ()"
+                  moduleName = "fruitsApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/Work/Finished%20Projects/fruitsApp/fruitsApp/Login%20+%20Registering%20Pages/resetPass.swift"
+                  timestampString = "629028085.8592401"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "51"
+                  endingLineNumber = "51"
+                  offsetFromSymbolStart = "202">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -58,12 +90,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "fruitsApp/Cart/completeOrder.swift"
-            timestampString = "626309470.736416"
+            timestampString = "629028085.4054511"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "92"
-            endingLineNumber = "92"
-            landmarkName = "submit()"
+            startingLineNumber = "268"
+            endingLineNumber = "268"
+            landmarkName = "mapView(_:didEndDragging:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

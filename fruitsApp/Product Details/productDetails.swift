@@ -24,11 +24,13 @@ class productDetails: ContentViewController{
     var startFrom: Double? = 0.0
     var priceFrom: Double? = 0.0
     var data: product? = nil
+    var viewParent : home?
+    var productAdded = false
     var weight_unit_id = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    
         discription.delegate = self
         setupData()
         setupDropDown(dropButton)
@@ -82,7 +84,16 @@ class productDetails: ContentViewController{
         dropDown.show()
     }
     
+    fileprivate func setCartCount(){
+        AppDelegate.badge[1].removeFromSuperlayer()
+        AppDelegate.badge[1] = CAShapeLayer()
+        AppDelegate.firstBadge[1] = true
+        getCartItems(id: 1)
+    }
     @IBAction func close(){
+        if productAdded{
+            viewParent?.setCartCount()
+        }
        super.dismiss(animated: true)
     }
     @IBAction func plus(){
@@ -108,13 +119,12 @@ class productDetails: ContentViewController{
         }
     }
     @IBAction func addProductToCart(){
-       
         if CashedData.getUserApiKey() == "" || CashedData.getUserApiKey() == nil{
             openRegisteringPage(pagTitle: "login")
         }else{
             addToCart(productId: data?.id ?? 0, weight_unit_id: weight_unit_id, quantity: Int((totalCount ?? 0)/(startFrom ?? 0.0))){
                 done in
-                self.getCartItems(id: 1)
+                self.productAdded = true
             }
         }
     }

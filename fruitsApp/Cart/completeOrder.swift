@@ -15,8 +15,8 @@ class completeOrder: common , CLLocationManagerDelegate{
     let dropDown = DropDown()
     
     // MARk:- Map
+    @IBOutlet weak var mapView: GMSMapView!
     let geocoder = GMSGeocoder()
-    @IBOutlet var mapView: GMSMapView!
     var locationManager = CLLocationManager()
     var currentLocation: CLLocation?
     var placesClient: GMSPlacesClient!
@@ -26,8 +26,8 @@ class completeOrder: common , CLLocationManagerDelegate{
     let marker = GMSMarker()
     // The currently selected place.
     var selectedPlace: GMSPlace?
-    var long:Double?
-    var lat:Double?
+    var position = CLLocationCoordinate2D(latitude: 24.662499, longitude: 46.676857)
+    
     
     var cartID: Int?
     var promoCode: String?
@@ -46,6 +46,8 @@ class completeOrder: common , CLLocationManagerDelegate{
         super.viewDidLoad()
         navigationItem.title = "استكمال الشراء"
         
+        
+        // add button to current location
         mapView.delegate = self
         locationManager.delegate = self
         // add button to current location
@@ -53,7 +55,7 @@ class completeOrder: common , CLLocationManagerDelegate{
         mapView.isMyLocationEnabled = true
         mapView.settings.myLocationButton = true
         mapView.padding = UIEdgeInsets(top: 0, left: 0, bottom: 20, right: 20)
- 
+        marker.isDraggable = true;
         time.delegate = self
         showDatePicker()
         getAvailableTimes()
@@ -84,8 +86,8 @@ class completeOrder: common , CLLocationManagerDelegate{
                 "payment_way": "cach",
                 "day": deliveryDate.text ?? "",
                 "availability_id": availableId ?? 0,
-                "lat": lat ?? 0.0,
-                "lon":long ?? 0.0,
+                "lat": position.latitude ,
+                "lon":position.longitude ,
                 "address":address.text ?? "",
                 "promo_code":promoCode ?? ""
         ] as [String : Any]
@@ -163,6 +165,56 @@ extension completeOrder{
         self.locationManager.stopUpdatingLocation()
     }
     
+    func showMarker(position: CLLocationCoordinate2D){
+        self.position.latitude = position.latitude
+        self.position.longitude = position.longitude
+        geocoder.reverseGeocodeCoordinate(position) {
+            (response, error) in
+            guard let address = response?.firstResult(), let lines = address.lines else {
+                return
+            }
+            self.marker.position = position
+            self.marker.title = lines.joined(separator: "\n")
+            self.marker.map = self.mapView
+            self.address.text = lines.joined(separator: "\n")
+        }
+        self.mapView.camera = GMSCameraPosition.camera(withLatitude: position.latitude, longitude: position.longitude, zoom: 12.0)
+    }
+    
+    @IBAction func gpsAction(_ sender: Any){
+        self.mapView.isMyLocationEnabled = true
+        //Location Manager code to fetch current location
+        self.locationManager.delegate = self
+        self.locationManager.startUpdatingLocation()
+    }
+    
+    func setupLocationManager() {
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = 1.0
+    }
+    func checkLocationServices() {
+        if CLLocationManager.locationServicesEnabled() {
+            setupLocationManager()
+            checkLocationAuthorization()
+        } else {
+            // Show alert letting the user know they have to turn this on.
+            locationManager.requestWhenInUseAuthorization()
+        }
+    }
+    
+    func checkLocationAuthorization() {
+        switch CLLocationManager.authorizationStatus() {
+        case .authorizedWhenInUse:
+            locationManager.startUpdatingLocation()
+        case .notDetermined:
+            locationManager.requestWhenInUseAuthorization()
+        case .denied , .restricted , .authorizedAlways:
+            print("denied")
+        @unknown default:
+            print("default")
+        }
+    }
+    
     func showDatePicker(){
         //Formate Date
         datePicker.datePickerMode = .date
@@ -209,79 +261,36 @@ extension completeOrder: GMSMapViewDelegate{
         print("didBeginDragging")
     }
     func mapView(_ mapView: GMSMapView, didDrag marker: GMSMarker) {
-        print("didDrag")
+    
     }
     func mapView(_ mapView: GMSMapView, didEndDragging marker: GMSMarker) {
-        print("didEndDragging")
+         mapView.clear()
+        self.showMarker(position: marker.position)
     }
     
     func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D){
-        print("didTap")
-        // mapView.clear()
+        
+    }
+    
+    func mapView(_ mapView: GMSMapView, didLongPressAt coordinate: CLLocationCoordinate2D) {
+        mapView.clear()
         self.showMarker(position: coordinate)
     }
+    
     func mapView(_ mapView: GMSMapView, willMove gesture: Bool) {
         
     }
     
-    func showMarker(position: CLLocationCoordinate2D){
-        
-        self.long = position.longitude
-        self.lat = position.latitude
-        geocoder.reverseGeocodeCoordinate(position) {
-            (response, error) in
-            guard let address = response?.firstResult(), let lines = address.lines else {
-                return
-            }
-            self.marker.position = position
-            self.marker.title = lines.joined(separator: "\n")
-            self.marker.map = self.mapView
-            self.address.text = lines.joined(separator: "\n")
-        }
-        self.mapView.camera = GMSCameraPosition.camera(withLatitude: lat ?? 21.555940, longitude: long ?? 39.194628, zoom: 12.0)
-    }
     
-    @IBAction func gpsAction(_ sender: Any){
-        self.mapView.isMyLocationEnabled = true
-        //Location Manager code to fetch current location
-        self.locationManager.delegate = self
-        self.locationManager.startUpdatingLocation()
-    }
-    
-    func setupLocationManager() {
-        mapView.isMyLocationEnabled = true
-        mapView.settings.myLocationButton = true
-        mapView.padding = UIEdgeInsets(top: 0, left: 0, bottom: 20, right: 20)
-        //Location Manager code to fetch current location
-        locationManager.delegate = self
-        locationManager.desiredAccuracy = 1.0
-        locationManager.startUpdatingLocation()
-    }
-    func checkLocationServices() {
-        if CLLocationManager.locationServicesEnabled() {
-            setupLocationManager()
-            checkLocationAuthorization()
-        }else {
-            // Show alert letting the user know they have to turn this on.
-            locationManager.requestWhenInUseAuthorization()
-        }
-    }
-    
-    func checkLocationAuthorization() {
-        switch CLLocationManager.authorizationStatus() {
-        case .authorizedWhenInUse:
-            locationManager.startUpdatingLocation()
-        case .notDetermined:
-            locationManager.requestWhenInUseAuthorization()
-        case .denied , .restricted , .authorizedAlways:
-            print("denied")
-        @unknown default:
-            print("default")
-        }
-    }
 }
 extension completeOrder: UITextFieldDelegate{
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         return false
+    }
+}
+extension completeOrder: UITextViewDelegate{
+    func textViewShouldBeginEditing(_ textView: UITextView) -> Bool {
+        textView.text = ""
+        return true
     }
 }
